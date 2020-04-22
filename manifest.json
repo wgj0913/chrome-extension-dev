@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "小枫文字提取插件",
+  "description": "用于文字提取.",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["declarativeContent", "storage", "contextMenus", "tabs", "activeTab", "contextMenus", "http://*/*", "https://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["common.css"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
